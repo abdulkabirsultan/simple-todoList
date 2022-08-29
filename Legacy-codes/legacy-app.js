@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const app = express();
 const _ = require("lodash");
 mongoose.connect(
-  "mongodb+srv://Abdulkabir_sultan:Damilare01@cluster0.ya5vk.mongodb.net/todoListDB"
+  "mongodb+srv://demo:Demo@cluster0.ya5vk.mongodb.net/todoListDB"
 );
 app.set("view engine", "ejs");
 
