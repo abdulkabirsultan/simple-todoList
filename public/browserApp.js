@@ -3,12 +3,11 @@ const edit = document.querySelectorAll('.edit');
 const clear = document.querySelector('.clear');
 const date = document.querySelector('.date');
 const month = document.querySelector('.month');
-
 const input = document.querySelector('#title');
 const form = document.querySelector('.form-submit');
+const errorText = document.querySelector('.error');
 let isEdit = false;
 let editId = '';
-const errorText = document.querySelector('.error');
 
 /* get Month and Day */
 const getDate = new Date()

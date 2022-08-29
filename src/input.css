@@ -6,3 +6,12 @@ html {
   min-height: 100vh;
   background: linear-gradient(65deg, #a04343 50%, rgb(47, 59, 77) 50%);
 }
+.nav {
+  @apply navbar justify-center bg-slate-200 my-8 h-14 text-stone-800 shadow-slate-800 rounded-3xl;
+}
+.card-container {
+  @apply card w-[90%] rounded-none shadow-xl bg-slate-700;
+}
+.card-header {
+  @apply bg-stone-500 flex text-gray-100 border-b-slate-600 border-b py-4 leading-loose justify-between items-center px-4 relative;
+}

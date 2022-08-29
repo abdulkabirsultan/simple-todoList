@@ -28,12 +28,8 @@ app.use(notFound);
 
 const port = process.env.PORT || 5000;
 const start = async () => {
-  try {
-    await connect();
-    app.listen(port, console.log(`Server started on port ${port}`));
-  } catch (error) {
-    console.log(error);
-  }
+  await connect();
+  app.listen(port, console.log(`Server started on port ${port}`));
 };
 start();
 
