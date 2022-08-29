@@ -37,11 +37,16 @@ const handleSubmit = async (e) => {
   try {
     if (isEdit) {
       window.location.reload();
-      await axios.patch(`http://localhost:5000/todo/${editId}`, {
+      await axios.patch(
+        `https://simple-todolist-project.herokuapp.com/todo/${editId}`,
+        {
+          title: input.value,
+        }
+      );
+    } else {
+      await axios.post('https://simple-todolist-project.herokuapp.com/todo', {
         title: input.value,
       });
-    } else {
-      await axios.post('http://localhost:5000/todo', { title: input.value });
     }
     isEdit = false;
     window.location.reload();
@@ -54,14 +59,18 @@ form.addEventListener('submit', handleSubmit);
 /* Clear all Items */
 clear.addEventListener('click', async () => {
   window.location.reload();
-  await axios.delete('http://localhost:5000/todo/remove');
+  await axios.delete(
+    'https://simple-todolist-project.herokuapp.com/todo/remove'
+  );
 });
 
 /* Edit Item */
 edit.forEach((btn, btnIndex) => {
   btn.addEventListener('click', async () => {
     try {
-      const { data: items } = await axios.get('http://localhost:5000/todo/');
+      const { data: items } = await axios.get(
+        'https://simple-todolist-project.herokuapp.com/todo/'
+      );
       items.reverse().forEach((item, index) => {
         if (btnIndex === index) {
           isEdit = true;

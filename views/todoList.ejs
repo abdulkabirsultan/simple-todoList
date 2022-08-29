@@ -46,14 +46,16 @@
           class="px-5 hover:border-l-4 flex cursor-default py-4 justify-between hover:border-l-purple-600"
         >
           <span class="item"><%= item.title %></span>
-          <div >
-           
-           
-              <button class="edit mr-3 text-primary-focus"><i class="fa-regular fa-pen-to-square"></i></button>
-              <button class="text-error">
-                <a href="/todo/<%=item._id %>"><i class="fa-solid fa-trash"></i></a>
-              </button>
-            
+          <div>
+            <button class="edit mr-3 text-primary-focus">
+              <i class="fa-regular fa-pen-to-square"></i>
+            </button>
+            <button class="text-error">
+              <a
+                href="https://simple-todolist-project.herokuapp.com/todo/<%=item._id %>"
+                ><i class="fa-solid fa-trash"></i
+              ></a>
+            </button>
           </div>
         </li>
         <% }) %>
