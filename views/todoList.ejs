@@ -1,0 +1,64 @@
+<%- include('header') %>
+<main class="max-w-md place-items-center mx-auto grid">
+  <nav
+    class="navbar justify-center bg-slate-200 my-8 h-14 text-stone-800 shadow-slate-800 rounded-3xl"
+  >
+    TODO LIST
+  </nav>
+
+  <div class="card w-[90%] rounded-none shadow-xl bg-slate-700">
+    <div
+      class="bg-stone-500 flex text-gray-100 border-b-slate-600 border-b py-4 leading-loose justify-between items-center px-4 relative"
+    >
+      <div class="text-lg">
+        <h2 class="date"></h2>
+        <p class="month"></p>
+      </div>
+      <div>
+        <p class="text-lg">
+          <%=length ==0 ?'No Tasks': length ===1?`${length} Task`:`${length}
+          Tasks` %>
+        </p>
+
+        <div class="btn btn-xs btn-error clear">Clear List</div>
+      </div>
+    </div>
+    <p class="text-center text-error text-lg error"></p>
+    <form action="/" class="form-control relative form-submit" method="post">
+      <button
+        type="submit"
+        class="btn rounded-full text-2xl btn-secondary btn-circle btn-md absolute text-center right-0 bottom-3"
+      >
+        +
+      </button>
+      <input
+        type="text"
+        placeholder="Add Item"
+        name="title"
+        id="title"
+        class="w-[92%] my-3 ml-2 max-w-md input"
+      />
+    </form>
+    <div class="card-body text-slate-800 p-0 bg-slate-200">
+      <ul class="divide-y divide-stone-500">
+        <% items.forEach((item)=>{ %>
+        <li
+          class="px-5 hover:border-l-4 flex cursor-default py-4 justify-between hover:border-l-purple-600"
+        >
+          <span class="item"><%= item.title %></span>
+          <div >
+           
+           
+              <button class="edit mr-3 text-primary-focus"><i class="fa-regular fa-pen-to-square"></i></button>
+              <button class="text-error">
+                <a href="/todo/<%=item._id %>"><i class="fa-solid fa-trash"></i></a>
+              </button>
+            
+          </div>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</main>
+<%- include('footer') %>
